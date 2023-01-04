@@ -114,22 +114,23 @@ class Message(View):
 
 class Search(View):
     """搜索"""
-    def get(self,request):
-        key = request.GET.get('key','')
+
+    def get(self, request):
+        key = request.GET.get('key', '')
         if key:
             article_list = Blog.objects.filter(Q(title__icontains=key) | Q(content__icontains=key))
 
         else:
             article_list = ''
         count = article_list.count()
-        return render(request,'search.html',{
+        return render(request, 'search.html', {
             'category_list': category_list,
             'tag_list': tag_list,
             'article_rank': article_rank,
             'comment_list': comment_list,
-            'article_list':article_list,
-            'count':count,
-            'key':key,
+            'article_list': article_list,
+            'count': count,
+            'key': key,
         })
 
 
@@ -193,20 +194,22 @@ class Tagcloud(View):
 def page_not_look(request):
     """全局403配置"""
     from django.shortcuts import render_to_response
-    response = render_to_response('403.html',{})
+    response = render_to_response('403.html', {})
     response.status_code = 403
     return response
+
 
 def page_not_found(request):
     """全局404配置"""
     from django.shortcuts import render_to_response
-    response = render_to_response('404.html',{})
+    response = render_to_response('404.html', {})
     response.status_code = 404
     return response
+
 
 def page_error(request):
     """全局500配置"""
     from django.shortcuts import render_to_response
-    response = render_to_response('500.html',{})
+    response = render_to_response('500.html', {})
     response.status_code = 500
     return response
