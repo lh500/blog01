@@ -2,7 +2,7 @@
 {% load custom_filter %}
 
 {% block title %}
-    <title>博客列表 - 烂笔头</title>
+    <title>博客列表 - Tim</title>
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
                     <li {% if article.read_nums > 500 %}id="tuijian"{% elif article.read_nums > 100 %} id="Hot" {% endif %}>
                     <div class="arcimg">
 
-                        <img src="{{ MEDIA_URL }}{{ article.image }}"
+                        <img src="{{ article.image }}"
                              alt="{{ article.title }}" title="{{ article.title }}"/>
                     </div>
                     <div class="arc-right">
@@ -30,7 +30,7 @@
                         <ul>
                             <li><a title="{{ article.author }} {{ article.edit_time }} 发表 "><i class="el-time"></i> {{ article.edit_time }}</a></li>
                             <li><a href="#" title="作者： {{ article.author }}"><i class="el-user"></i>{{ article.author }}</a></li>
-                            <li><a href="#" title="已有 {{ article.conment_nums }} 条评论"><i class="el-comment"></i>{{ article.conment_nums }}</a>
+                            <li><a href="#" title="已有 {{ article.comment_nums }} 条评论"><i class="el-comment"></i>{{ article.comment_nums }}</a>
                             </li>
                             <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}</a></li>
                             <li class="mob-hidden">

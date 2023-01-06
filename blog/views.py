@@ -9,13 +9,13 @@ from django.db.models import Q
 
 # Create your views here.
 
-from .models import Blog, Category, Conment, Tagprofile
+from .models import Blog, Category, Comment, Tagprofile
 
 # 通用模块
 tag_list = Tagprofile.objects.all()  # 标签云
 category_list = Category.objects.all()  # 分类
-article_rank = Blog.objects.all().order_by('-conment_nums')[:10]  # 热门博客
-comment_list = Conment.objects.all().order_by('-add_time')[:20]  # 最新评论
+article_rank = Blog.objects.all().order_by('-comment_nums')[:10]  # 热门博客
+comment_list = Comment.objects.all().order_by('-add_time')[:20]  # 最新评论
 
 
 class Index(View):
@@ -23,7 +23,7 @@ class Index(View):
 
     def get(self, request):
         article_list = Blog.objects.all().order_by('-edit_time')[:5]
-        article_rank = Blog.objects.all().order_by('-conment_nums')[:5]
+        article_rank = Blog.objects.all().order_by('-comment_nums')[0:5]
 
         return render(request, 'index.html', {
             'article_list': article_list,
@@ -153,7 +153,7 @@ def GetComment(request):
     comments = data.get('comments')[0]
     content = comments.get('content')
     user = comments.get('user').get('nickname')
-    Conment(title=title, source_id=source_id, user=user, url=url, conment=content).save()
+    Comment(title=title, source_id=source_id, user=user, url=url, comment=content).save()
     return JsonResponse({"status": "ok"})
 
 
@@ -169,7 +169,6 @@ class Detail(View):
             'category_list': category_list,
             'article_rank': article_rank,
             'comment_list': comment_list,
-
         })
 
 

@@ -42,7 +42,7 @@
             {% for article in article_list %}
             <li id="New">
                 <div class="arcimg">
-                    <img src="{{ MEDIA_URL }}{{ article.image }}" alt="{{ article.title }}" title="{{ article.title }}"/>
+                    <img src="{{ article.image }}" alt="{{ article.title }}" title="{{ article.title }}"/>
                 </div>
                 <div class="arc-right">
                     <h4 class="blue-text"><a href="{% url "blog:detail" pk=article.id %}" title="{{ article.title }}">{{ article.title }}</a></h4>
@@ -52,8 +52,8 @@
                             <i class="el-time"></i> {{ article.edit_time }}</a></li>
                         <li><a href="#" title="作者： {{ article.author }}"><i
                                 class="el-user"></i>{{ article.author }}</a></li>
-                        <li><a href="#" title="已有 {{ article.conment_nums }} 条评论"><i
-                                class="el-comment"> {{ article.conment_nums }}</i></a>
+                        <li><a href="#" title="已有 {{ article.comment_nums }} 条评论"><i
+                                class="el-comment"> {{ article.comment_nums }}</i></a>
                         </li>
                         <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}
                         </a></li>
@@ -75,7 +75,7 @@
             {% for article in article_rank %}
             <li id="Hot">
                 <div class="arcimg">
-                    <img src="{{ MEDIA_URL }}{{ article.image }}" alt="{{ article.title }}" title="{{ article.title }}"/>
+                    <img src="{{ article.image }}" alt="{{ article.title }}" title="{{ article.title }}"/>
                 </div>
                 <div class="arc-right">
                     <h4 class="blue-text">
@@ -86,8 +86,8 @@
                                 class="el-time"></i> {{ article.edit_time }}</a></li>
                         <li><a href="#" title="作者： {{ article.author }}"><i
                                 class="el-user"></i>{{ article.author }}</a></li>
-                        <li><a href="#" title="已有 {{ article.conment_nums }} 条评论"><i
-                                class="el-comment"> {{ article.conment_nums }}</i></a>
+                        <li><a href="#" title="已有 {{ article.comment_nums }} 条评论"><i
+                                class="el-comment"> {{ article.comment_nums }}</i></a>
                         </li>
                         <li><a title="已有 {{ article.read_nums }} 次浏览"><i class="el-eye-open"></i>{{ article.read_nums }}
                         </a></li>
