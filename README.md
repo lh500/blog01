@@ -22,7 +22,7 @@
 
 ### 下载
 ```
-git clone https://github.com/myminwang/myblog.git
+git clone https://github.com/lh500/blog01.git
 ```
 
 ### 安装
