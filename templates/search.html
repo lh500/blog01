@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <title>搜索:{{ key }} - 烂笔头</title>
+    <title>搜索:{{ key }} - Tim</title>
 {% endblock %}
 
 {% load custom_filter %}
@@ -19,7 +19,7 @@
                     <li {% if article.read_nums > 500 %}id="tuijian"{% elif article.read_nums > 100 %} id="Hot" {% endif %}>
                     <div class="arcimg">
 
-                        <img src="{{ MEDIA_URL }}{{ article.image }}"
+                        <img src="{{ article.image }}"
                              alt="{{ article.title }}" title="{{ article.title }}"/>
                     </div>
                     <div class="arc-right">

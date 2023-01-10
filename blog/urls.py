@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-__author__ = "问道编程"
-__date__ = "2018-07-04 14:45"
+__author__ = "Tim_Liu"
+__date__ = "2023-01-04 14:45"
 
 from django.urls import path
 

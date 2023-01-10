@@ -3,7 +3,7 @@
         <!--头像左边部分-->
         <div class="top-left">
             <div class="logo"><a href="/"><img src="/static/images/h.gif"/></a></div>
-{#                <div class="logo"><a href="#"><img src="/static/images/logo.png"/></a></div>#}
+            {#                <div class="logo"><a href="#"><img src="/static/images/logo.png"/></a></div>#}
 
             <!--滚动消息-->
             <div class="web-xiaoxi">
@@ -38,6 +38,7 @@
                 <li><a href="{% url "blog:archive" %}">归档</a></li>
                 <li><a href="{% url "blog:link" %}">链接</a></li>
                 <li><a href="{% url "blog:message" %}">留言</a></li>
+                <li><a href="http://127.0.0.1:8000/admin/">后台登录</a></li>
             </ul>
         </nav>
 
@@ -69,6 +70,7 @@
                 <li><a href="{% url "blog:archive" %}">归档</a></li>
                 <li><a href="{% url "blog:link" %}">链接</a></li>
                 <li><a href="{% url "blog:message" %}">留言</a></li>
+                <li><a href="{% url "blog:message" %}">后台登录</a></li>
             </ul>
         </div>
     </div>

@@ -47,3 +47,11 @@ python manage.py runserver
 
 * 文章内容
 ![文章内容](./doc/image/image3.png)
+  
+
+
+<font size=3 color=grenn face='华文彩云'>* 后台初始管理账号 *
+<br>账号：Tim
+<br>密码：Tim123456 
+</font>
+  
