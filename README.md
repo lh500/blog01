@@ -7,6 +7,13 @@
 * Python: 3.X
 * Django: 2.0.x
 * MySQL
+<font color=red >
+* 特别注意依赖库的版本问题
+* pip install Django==2.0.7
+* pip install Pillow==7.1.0
+* 等
+</font>
+
 
 ### 特点
 
